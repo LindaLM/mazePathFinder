@@ -6,6 +6,7 @@ public class MazePathFinderStdIn extends MazePathFinder{
     @Override
     ArrayList<String> readMaze() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter maze matrix");
         ArrayList<String> lines = new ArrayList<>();
         boolean nextLine = true;
         while (nextLine) {

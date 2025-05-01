@@ -1,33 +1,22 @@
+import java.util.Arrays;
+
 public class Maze {
-    private int rows;
-    private int cols;
     private int startRow;
     private int startCol;
     private int endRow;
     private int endCol;
-    private char[][] mazeChars;
-    private boolean[][] visited;
+    private MazeElement[][] elements;
+    //private char[][] mazeChars;
+    //private boolean[][] visited;
     // to set direction from which we come to maze element, so we can backtrack path to end point
-    private char[][] direction;
+    //private char[][] direction;
 
-    public Maze(int rows, int cols, int startRow, int startCol, int endRow, int endCol, char[][] mazeChars) {
-        this.rows = rows;
-        this.cols = cols;
+    public Maze(int startRow, int startCol, int endRow, int endCol, MazeElement[][] elements) {
         this.startRow = startRow;
         this.startCol = startCol;
         this.endRow = endRow;
         this.endCol = endCol;
-        this.mazeChars = mazeChars;
-        this.visited = new boolean[rows][cols];
-        this.direction = new char[rows][cols];
-    }
-
-    public int getRows() {
-        return rows;
-    }
-
-    public int getCols() {
-        return cols;
+        this.elements = elements;
     }
 
     public int getStartRow() {
@@ -46,15 +35,14 @@ public class Maze {
         return endCol;
     }
 
-    public char[][] getMazeChars() {
-        return mazeChars;
+    public MazeElement[][] getElements() {
+        return elements;
     }
 
-    public boolean[][] getVisited() {
-        return visited;
-    }
-
-    public char[][] getDirection() {
-        return direction;
+    @Override
+    public String toString() {
+        return "Maze{" +
+                "elements=" + Arrays.deepToString(elements) +
+                '}';
     }
 }
